@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Catálogo · Peça pelo WhatsApp</title>
+  <meta name="description" content="Veja o cardápio, monte seu pedido e envie direto pelo WhatsApp.">
+  <meta name="theme-color" content="#5b2a86">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%235b2a86'/%3E%3Cpath d='M18 22h28l-3 22H21z' fill='%23fff'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/catalogo.css">
+</head>
+<body>
+  <header class="topo" id="topo">
+    <div class="marca"><div class="logo" id="logo" aria-hidden="true"></div>
+      <div><h1 id="nome-loja">Carregando…</h1><p id="descricao-loja" class="mut"></p></div></div>
+    <div class="info"><span class="horario" id="horario"></span><span id="endereco" class="mut"></span></div>
+  </header>
+
+  <nav class="barra" aria-label="Categorias e busca">
+    <input type="search" id="busca" placeholder="Buscar no cardápio…" aria-label="Buscar produto">
+    <div class="categorias" id="categorias"></div>
+  </nav>
+
+  <main id="catalogo" aria-live="polite"><p class="carregando">Carregando o cardápio…</p></main>
+
+  <footer class="rodape" id="rodape"></footer>
+
+  <button class="ver-pedido" id="ver-pedido" hidden>
+    <span><b id="qtd-itens">0</b> <span id="rotulo-itens">itens</span></span>
+    <span>Ver pedido</span><b id="total-barra">R$ 0,00</b>
+  </button>
+
+  <!-- Escolha de tamanho e adicionais -->
+  <dialog id="dlg-produto" aria-labelledby="p-nome">
+    <form method="dialog" id="form-produto">
+      <div class="foto" id="p-foto"></div>
+      <div class="conteudo">
+        <h2 id="p-nome"></h2><p id="p-descricao" class="mut"></p>
+        <fieldset id="p-variacoes"><legend>Escolha uma opção</legend><div class="opcoes"></div></fieldset>
+        <fieldset id="p-adicionais"><legend>Adicionais <span class="mut">(opcional)</span></legend><div class="opcoes"></div></fieldset>
+        <label class="campo">Alguma observação? <span class="mut">(opcional)</span>
+          <input type="text" id="p-obs" maxlength="120" placeholder="Ex.: sem gelo, bem passado…"></label>
+      </div>
+      <div class="acoes-produto">
+        <div class="qtd"><button type="button" data-qtd="-1" aria-label="Diminuir">−</button><output id="p-qtd">1</output><button type="button" data-qtd="1" aria-label="Aumentar">+</button></div>
+        <button type="submit" class="principal" id="p-adicionar">Adicionar</button>
+      </div>
+      <button type="button" class="fechar" data-fechar aria-label="Fechar">✕</button>
+    </form>
+  </dialog>
+
+  <!-- Carrinho e dados da entrega -->
+  <dialog id="dlg-pedido" aria-labelledby="pedido-titulo">
+    <form id="form-pedido" novalidate>
+      <div class="conteudo">
+        <h2 id="pedido-titulo">Seu pedido</h2>
+        <ul class="itens" id="itens"></ul>
+        <p class="aviso" id="aviso-minimo" hidden></p>
+
+        <h3>Como você quer receber?</h3>
+        <div class="escolha" id="tipo-entrega">
+          <label><input type="radio" name="tipo" value="entrega" checked> Entrega</label>
+          <label id="op-retirada"><input type="radio" name="tipo" value="retirada"> Retirar na loja</label>
+        </div>
+        <div id="campos-entrega">
+          <label class="campo">Bairro<select id="bairro" required></select></label>
+          <p class="mut pequeno" id="aviso-bairro"></p>
+          <label class="campo">Endereço<input type="text" id="endereco-cliente" autocomplete="street-address" placeholder="Rua, número" required></label>
+          <label class="campo">Ponto de referência <span class="mut">(opcional)</span><input type="text" id="referencia" placeholder="Perto de…"></label>
+        </div>
+        <p class="mut pequeno" id="info-retirada" hidden></p>
+
+        <h3>Pagamento</h3>
+        <div class="escolha" id="pagamentos"></div>
+        <label class="campo" id="campo-troco" hidden>Troco para quanto? <span class="mut">(opcional)</span>
+          <input type="text" id="troco" inputmode="decimal" placeholder="Ex.: 50"></label>
+        <div class="pix" id="info-pix" hidden><span>Chave Pix: <b id="chave-pix"></b></span><button type="button" id="copiar-pix">Copiar</button></div>
+
+        <label class="campo">Seu nome<input type="text" id="nome-cliente" autocomplete="name" required></label>
+        <label class="campo">Observação do pedido <span class="mut">(opcional)</span><input type="text" id="observacao" maxlength="200"></label>
+
+        <dl class="totais" id="totais"></dl>
+        <p class="aviso" id="aviso-fechado" hidden></p>
+        <p class="erro" id="erro-pedido" role="alert"></p>
+      </div>
+      <div class="acoes-pedido">
+        <button type="submit" class="principal whats">Enviar pedido pelo WhatsApp</button>
+        <p class="mut pequeno">Abre o WhatsApp com o pedido pronto. É só tocar em enviar.</p>
+      </div>
+      <button type="button" class="fechar" data-fechar aria-label="Fechar">✕</button>
+    </form>
+  </dialog>
+
+  <div class="aviso-flutuante" id="toast" role="status" hidden></div>
+
+  <noscript><p class="carregando">Ative o JavaScript para ver o cardápio.</p></noscript>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

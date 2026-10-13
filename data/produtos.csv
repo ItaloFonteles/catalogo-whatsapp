@@ -1,0 +1,11 @@
+categoria;nome;descricao;preco;variacoes;adicionais;imagem;disponivel;destaque
+Açaí;Açaí tradicional;Açaí cremoso batido na hora. Escolha o tamanho e os adicionais.;;300 ml=12,00 | 500 ml=16,00 | 700 ml=20,00;Granola=2,00 | Leite em pó=2,50 | Leite condensado=2,50 | Paçoca=2,00 | Banana=2,00 | Morango=4,00 | Nutella=6,00;;sim;sim
+Açaí;Açaí no copo da casa;500 ml com banana, granola, leite em pó e leite condensado.;22,00;;Morango=4,00 | Nutella=6,00;;sim;sim
+Açaí;Barca de açaí;1 litro com 4 adicionais à escolha. Serve 2 a 3 pessoas.;45,00;;Morango=4,00 | Nutella=6,00 | Kiwi=4,00;;sim;
+Cremes;Creme de cupuaçu;Creme gelado de cupuaçu da região.;;300 ml=13,00 | 500 ml=18,00;Granola=2,00 | Leite em pó=2,50;;sim;
+Cremes;Creme de buriti;Sabor de Roraima.;;300 ml=14,00 | 500 ml=19,00;Granola=2,00;;não;
+Lanches;Misto quente;Pão de forma, presunto e queijo na chapa.;9,00;;Ovo=2,00 | Bacon=3,00;;sim;
+Lanches;Tapioca de queijo coalho;Tapioca recheada com queijo coalho.;12,00;;Presunto=2,00 | Coco=2,00;;sim;
+Bebidas;Água mineral;500 ml.;3,50;;;;sim;
+Bebidas;Refrigerante lata;350 ml.;6,00;Coca-Cola | Guaraná | Fanta Laranja;;;sim;
+Bebidas;Suco natural;Feito na hora.;;300 ml=8,00 | 500 ml=11,00;;;sim;

@@ -1,0 +1,36 @@
+{
+  "nome": "Açaiteria Exemplo",
+  "descricao": "Açaí, cremes e lanches em Boa Vista. Peça pelo catálogo e receba em casa.",
+  "whatsapp": "95999999999",
+  "cor": "#5b2a86",
+  "logo": "",
+  "endereco": "Av. Exemplo, 123 - Centro, Boa Vista - RR",
+  "instagram": "",
+  "produtos": "data/produtos.csv",
+  "pedido_minimo": 15,
+  "horarios": {
+    "seg": "14:00-22:00",
+    "ter": "14:00-22:00",
+    "qua": "14:00-22:00",
+    "qui": "14:00-22:00",
+    "sex": "14:00-23:30",
+    "sab": "10:00-23:30",
+    "dom": "15:00-22:00"
+  },
+  "entrega": {
+    "retirada": true,
+    "bairros": [
+      { "nome": "Centro", "taxa": 4 },
+      { "nome": "São Vicente", "taxa": 5 },
+      { "nome": "Caçari", "taxa": 6 },
+      { "nome": "Paraviana", "taxa": 7 },
+      { "nome": "Mecejana", "taxa": 6 },
+      { "nome": "Buritis", "taxa": 7 },
+      { "nome": "Pricumã", "taxa": 8 },
+      { "nome": "Cambará", "taxa": 9 }
+    ],
+    "aviso_outros_bairros": "Seu bairro não está na lista? Escolha \"Outro bairro\": a taxa é combinada no WhatsApp."
+  },
+  "pagamento": ["Pix", "Cartão (maquininha na entrega)", "Dinheiro"],
+  "pix": "contato@exemplo.com.br"
+}
